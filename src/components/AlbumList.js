@@ -4,7 +4,7 @@ import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
-    state = { albums: [{}, {}, {}] };
+    state = { albums: [] };
 
     componentWillMount() {
         //console.log('componentWillMount in AlbumList');

@@ -4,25 +4,44 @@ import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
-    state = { albums: [] };
+    state = { albums: [{}, {}, {}] };
 
     componentWillMount() {
         //console.log('componentWillMount in AlbumList');
         axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-        .then(response => this.setState({ albums: response.data }));
+            .then(response => this.setState({ albums: response.data }));
     }
 
     renderAlbums() {
-        this.state.albums.map(album => 
-            <Text key={album.title}>{album.title}</Text>);
+
+
+        return this.state.albums.map(album => {
+
+
+            return (
+
+
+                <Text key={album.title}>{album.title}</Text>
+            );
+        });
     }
 
     render() {
-        console.log(this.state);
+        const movies = this.state.albums.map(album => {
+
+
+            return (
+
+                <Text key={album.title}>{album.title}</Text>
+
+            );
+        });
 
         return (
             <View>
-                { this.renderAlbums() }
+                {movies}
+                {this.renderAlbums()}
+
             </View>
         );
     }

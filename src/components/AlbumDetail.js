@@ -31,7 +31,7 @@ class AlbumDetail extends Component {
 					<Image style={styles.imageStyle} source={{ uri: this.props.album.image }} />
 				</CardSection>
 				<CardSection>
-					<Button />
+					<Button onPress={() => console.log(title)} />
 				</CardSection>
 			</Card>
 		);
